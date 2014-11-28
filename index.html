@@ -1,1 +1,106 @@
-html5-scratch
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="css/commpanel.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="css/chrome-tabs.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+
+</head>
+
+<body>
+<div class="tool-bar">
+  <!--<div id="tabs" class="nav-tabs">
+    <ul>
+      <li>
+        <div class="tab">
+          <div class="left-tab-border"></div>
+          <span class="tab-name">Peers</span>
+          <div class="right-tab-border"></div>
+          <span class="close"></span> </div>
+      </li>
+      <li>
+        <div class="tab">
+          <div class="left-tab-border"></div>
+          <span class="tab-name">Ballots</span>
+          <div class="right-tab-border"></div>
+          <span class="close"></span> </div>
+      </li>
+    </ul>
+  </div>-->
+  <div class="chrome-tabs-shell">
+  <div class="chrome-tabs">
+    <div class="chrome-tab">
+      <div class="chrome-tab-favicon" style="background-image: url('http://g.etfv.co/https://www.google.com')"></div>
+      <div class="chrome-tab-title">Google</div>
+      <div class="chrome-tab-close"></div>
+      <div class="chrome-tab-curves">
+        <div class="chrome-tab-curve-left-shadow2"></div>
+        <div class="chrome-tab-curve-left-shadow1"></div>
+        <div class="chrome-tab-curve-left"></div>
+        <div class="chrome-tab-curve-right-shadow2"></div>
+        <div class="chrome-tab-curve-right-shadow1"></div>
+        <div class="chrome-tab-curve-right"></div>
+      </div>
+    </div>
+    <div class="chrome-tab chrome-tab-current">
+      <div class="chrome-tab-favicon" style="background-image: url('http://g.etfv.co/https://www.facebook.com')"></div>
+      <div class="chrome-tab-title">Facebook</div>
+      <div class="chrome-tab-close"></div>
+      <div class="chrome-tab-curves">
+        <div class="chrome-tab-curve-left-shadow2"></div>
+        <div class="chrome-tab-curve-left-shadow1"></div>
+        <div class="chrome-tab-curve-left"></div>
+        <div class="chrome-tab-curve-right-shadow2"></div>
+        <div class="chrome-tab-curve-right-shadow1"></div>
+        <div class="chrome-tab-curve-right"></div>
+      </div>
+    </div>
+  </div>
+<div class="chrome-shell-bottom-bar"></div>
+</div>
+  <div class="search">
+    <ul class="left-buttons">
+      <li><a class="back" href=""></a></li>
+      <li><a class="forward" href=""></a></li>
+      <li><a class="refresh" href=""></a></li>
+    </ul>
+
+    <input type="text" placeholder="Search apps, websites, files and chats..."/>
+ 
+    <ul class="right-buttons">
+      <li><a class="peers" href=""></a></li>
+      <li><a class="messages" href=""></a></li>
+      <li><a class="notifications" href=""><span>3</span></a></li>
+      <li><a class="more" href=""></a></li>
+    </ul>
+  </div>
+</div>
+
+<script src="js/chrome-tabs.js"></script> 
+<script>
+            var $chromeTabsExampleShell = $('.chrome-tabs-shell')
+            chromeTabs.init({
+                $shell: $chromeTabsExampleShell,
+                minWidth: 45,
+                maxWidth: 180
+            });
+            chromeTabs.addNewTab($chromeTabsExampleShell, {
+                favicon: 'http://g.etfv.co/https://www.hubspot.com',
+                title: 'HubSpot',
+                data: {
+                    timeAdded: +new Date()
+                }
+            });
+            $chromeTabsExampleShell.bind('chromeTabRender', function(){
+                var $currentTab = $chromeTabsExampleShell.find('.chrome-tab-current');
+                if ($currentTab.length && window['console'] && console.log) {
+                    console.log('Current tab index', $currentTab.index(), 'title', $.trim($currentTab.text()), 'data', $currentTab.data('tabData').data);
+                }
+            });
+        </script>
+</body>
+</html>
